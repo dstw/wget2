@@ -33,7 +33,8 @@ endif
 WGET_TESTS = \
  test$(EXEEXT) \
  test-parse-html$(EXEEXT) \
- test-cond
+ test-cond \
+ test-iri$(EXEEXT)
 
 if PLUGIN_SUPPORT
  WGET_TESTS += test-dl$(EXEEXT)
@@ -45,6 +46,7 @@ check_PROGRAMS = buffer_printf_perf stringmap_perf $(WGET_TESTS)
 test_SOURCES = test.c
 test_LDADD = $(BASE_OBJS) ../lib/libgnu.la ../libwget/libwget.la $(MYLIBS)
 test_parse_html_LDADD = $(BASE_OBJS) ../lib/libgnu.la ../libwget/libwget.la $(MYLIBS)
+test_iri_LDADD = $(BASE_OBJS) ../lib/libgnu.la ../libwget/libwget.la $(MYLIBS)
 test_dl_LDADD = ../src/dl.o ../lib/libgnu.la ../libwget/libwget.la $(MYLIBS)
 
 EXTRA_DIST = files
